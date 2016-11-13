@@ -26,12 +26,18 @@ angular.module('myApp', [
   $scope.carRight = 2;
   $scope.carLeft = 0;
   $scope.move = 0;
-  $scope.query = "cow ";
+  $scope.query = "cow";
   var host = "http://143.215.90.149:3000/" + $scope.query;
   $http.get(host).then(function(response) {
-         $scope.imageList = response;
-         alert(response[0].url);
+        $scope.imageList = response.data;
+        var imageBase64 = $scope.imageList[0].base64;
+        console.log(imageBase64);
   })
+
+  $scope.getImage = function(data){
+    return 'data:image/jpeg;base64,' + data;
+  }
+
 
   $scope.moveCarousel = function(keyEvent) {
     //Math that moves the carousel and sets the current and previous page index's for the HTML bindings

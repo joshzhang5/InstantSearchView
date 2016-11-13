@@ -20,13 +20,13 @@
   <script src="js/materialize.js"></script>
   <script>
   $(document).ready(function(){
-      $('.carousel').carousel();
+      $('.carousel').carousel({full_width: true});
     });
   </script>
 </head>
 
 
-<body ng-style="{backgroundImage: 'url(' + imageList[current] + ')'}" style="background: no-repeat;background-size:cover;" ng-keydown="moveCarousel($event)">
+<body ng-keydown="moveCarousel($event)">
 
 
   <!--[if lt IE 7]>
@@ -46,17 +46,20 @@
           </form>
         </div> <!-- nav-wrapper-->
       </nav>
+       <div class="carousel footer">
+    <a class="carousel-item footer"><iframe src="http://www.w3schools.com"></iframe></a>
+    <a class="carousel-item footer"><iframe src="http://www.w3schools.com"></iframe></a>
+    <a class="carousel-item footer"><iframe src="http://www.w3schools.com"></iframe></a>
+  </div>
         <!-- /input-group -->
     </div>
     <!-- /.col-lg-6 -->
 </div>
 <!-- /.row -->
 
-  <div class="carousel footer"style = "position: fixed; bottom: 0;">
-    <a class="carousel-item footer" href="#one!"><img src={{imageList[carMid].base64}}></a>
-    <a class="carousel-item footer" href="#twp!"><img src={{imageList[carRight].base64}}></a>
-    <a class="carousel-item footer" href="#three!"><img src={{imageList[carLeft].base64}}></a>
-  </div>
+
+<data-ng-src= "{{getImage(imageList[carLeft].base64)}}">
+
 
   <!-- In production use:
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
