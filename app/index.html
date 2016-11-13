@@ -20,7 +20,7 @@
   <script src="js/materialize.js"></script>
   <script>
   $(document).ready(function(){
-      $('.carousel').carousel({full_width: true});
+      $('.carousel').carousel();
     });
   </script>
 </head>
@@ -46,19 +46,22 @@
           </form>
         </div> <!-- nav-wrapper-->
       </nav>
-       <div class="carousel footer">
-    <a class="carousel-item footer"><iframe src="http://www.w3schools.com"></iframe></a>
-    <a class="carousel-item footer"><iframe src="http://www.w3schools.com"></iframe></a>
-    <a class="carousel-item footer"><iframe src="http://www.w3schools.com"></iframe></a>
-  </div>
+
         <!-- /input-group -->
     </div>
     <!-- /.col-lg-6 -->
 </div>
 <!-- /.row -->
 
+<div class="row">
 
-<data-ng-src= "{{getImage(imageList[carLeft].base64)}}">
+ <div class="carousel" style = "width = 900px; height = 900px;">
+    <a class="carousel-item"><img src = {{getImage(test)}} style = "width = 900px; height = 900px;"></a>
+    <a class="carousel-item"><img src = {{getImage(test)}} style = "width = 900px; height = 900px;"></a>
+    <a class="carousel-item"><img src = {{getImage(test)}} style = "width = 900px; height = 900px;"></a>
+</div>
+
+</div>
 
 
   <!-- In production use:
