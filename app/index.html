@@ -54,11 +54,11 @@
 </div>
 <!-- /.row -->
 
-<div class="large-wrapper-2" ng-show: = "results">
+<div class="large-wrapper-2" ng-show:="results">
  <div id="carousel-id" class="carousel"  ng-show: ="results" style = "width = 900px; height = 1200px;">
-    <a href = {{imageList[carMid].url}} target = "_blank" class="carousel-item"  ng-show: ="results"><img src = {{getImage(imageList[carMid].base64)}} style = "width = 900px; height = 900px;"></a>
-    <a href = {{imageList[carRight].url}} target = "_blank" class="carousel-item" ng-show: ="results"><img src = {{getImage(imageList[carRight].base64)}} style = "width = 900px; height = 900px;"></a>
-    <a href = {{imageList[carLeft]}} target = "_blank" class="carousel-item" ng-show: ="results"><img src = {{getImage(imageList[carLeft].base64)}} style = "width = 900px; height = 900px;"></a>
+    <a href={{imageList[carMid].url}} target="_blank" class="carousel-item"  ng-show:="results"><img src = {{getImage(imageList[carMid].base64)}} style = "width = 900px; height = 900px;"></a>
+    <a href={{imageList[carRight].url}} target="_blank" class="carousel-item" ng-show:="results"><img src = {{getImage(imageList[carRight].base64)}} style = "width = 900px; height = 900px;"></a>
+    <a href={{imageList[carLeft]}} target="_blank" class="carousel-item" ng-show:="results"><img src = {{getImage(imageList[carLeft].base64)}} style = "width = 900px; height = 900px;"></a>
 </div>
 
 </div>
