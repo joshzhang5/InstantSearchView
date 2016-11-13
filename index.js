@@ -3,6 +3,7 @@ var Bing = require('node-bing-api')({ accKey: "a43582571a4946d0a3e7afb34d09807d"
 var urlToImage = require('url-to-image');
 var fs = require('fs');
 var Q = require('q');
+var webshot = require('webshot');
 var http = require('follow-redirects').http;
 var https = require('follow-redirects').https;
 var app = express();
@@ -15,8 +16,8 @@ app.get('/:query', function (req, res, next) {
   		var body = JSON.parse(result[0]['body']);
   		var arr = body.webPages.value.map(function(obj) {
   			//return {url: obj['displayUrl'], title: obj['name'], base64: 0};
-			return Q(urlToImage(obj['displayUrl'], 'google.png'))
-  			.then(function() {
+			return Q.ninvoke(webshot, obj['displayUrl'], 'google.png')
+  			.then(function(err) {
 				var base64str = base64_encode('google.png');
 				return {url: obj['displayUrl'], title: obj['name'], base64: base64str};
 			}).catch(function(err) {				
