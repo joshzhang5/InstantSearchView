@@ -18,6 +18,7 @@
   "homepage": "https://github.com/mwang370/InstantSearchView#readme",
   "dependencies": {
     "express": "^4.14.0",
+    "node-base64-image": "^1.0.3",
     "node-bing-api": "^3.0.1"
   }
 }
