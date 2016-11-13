@@ -12,7 +12,7 @@ angular.module('myApp', [
   //$routeProvider.otherwise({redirectTo: '/view1'});
 }])
 
-.controller('indexCtrl', ['$scope', function($scope) {
+.controller('indexCtrl', ['$scope', '$http', function($scope, $http) {
   $scope.imageList = [];
   $scope.imageList.push('test1.png');
   $scope.imageList.push('test2.png');
@@ -26,8 +26,12 @@ angular.module('myApp', [
   $scope.carRight = 2;
   $scope.carLeft = 0;
   $scope.move = 0;
-  $scope.query = "";
-
+  $scope.query = "cow ";
+  var host = "http://143.215.90.149:3000/" + $scope.query;
+  $http.get(host).then(function(response) {
+         $scope.imageList = response;
+         alert(response[0].url);
+  })
 
   $scope.moveCarousel = function(keyEvent) {
     //Math that moves the carousel and sets the current and previous page index's for the HTML bindings
