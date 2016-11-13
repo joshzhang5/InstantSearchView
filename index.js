@@ -2,24 +2,29 @@ var express = require('express');
 var Bing = require('node-bing-api')({ accKey: "a43582571a4946d0a3e7afb34d09807d" });
 var urlToImage = require('url-to-image');
 var fs = require('fs');
+var Q = require('q');
 var app = express();
 
-app.get('/', function (req, res, next) {
-	
-  	Bing.web("Tiger", {
+app.get('/', function (req, res, next) {	
+  	return Q.ninvoke(Bing.web, "Tiger", {
 		top: 30,  // Number of results (max 50) 
 		skip: 0   // Skip first 3 results 
-  	}, function(error, temp, body) {
-		var arr = body.webPages.value.map(function(obj) {
-			urlToImage(obj['displayUrl'], 'google.png').then(function() {
+  	}).then(function(error, temp, body) {
+  		console.log("Hfgfd");
+  		var arr = body.webPages.value.map(function(obj) {
+			return Q(urlToImage(obj['displayUrl'], 'google.png')).then(function() {
 				var base64str = base64_encode('google.png');
 				return {url: obj['displayUrl'], title: obj['name'], base64: base64str};
 			}).catch(function(err) {
 				console.error(err);
 			});			
 		});
-		res.send(arr); 
-  	});
+		return Q.all(arr);
+	}).then(function(arr) {
+		res.send(arr);
+	}).catch(function(err) {
+		console.error(err);
+	});
 });
 
 function base64_encode(file) {
