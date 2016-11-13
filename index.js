@@ -7,21 +7,21 @@ var http = require('follow-redirects').http;
 var https = require('follow-redirects').https;
 var app = express();
 
-app.get('/', function (req, res, next) {	
-  	return Q.ninvoke(Bing, 'web', "Cows", {
-		top: 1,  // Number of results (max 50) 
+app.get('/:query', function (req, res, next) {	
+  	return Q.ninvoke(Bing, 'web', req.params['query'], {
+		top: 5,  // Number of results (max 50) 
 		skip: 0   // Skip first 3 results 
   	}).then(function(result) {
   		var body = JSON.parse(result[0]['body']);
   		var arr = body.webPages.value.map(function(obj) {
-  			return Q.ninvoke(https, 'get', obj['url']).then(function(response) {
-  				var url = response.responseUrl;
-				return Q(urlToImage(url, 'google.png'));
-  			}).then(function() {
+  			//return {url: obj['displayUrl'], title: obj['name'], base64: 0};
+			return Q(urlToImage(obj['displayUrl'], 'google.png'))
+  			.then(function() {
 				var base64str = base64_encode('google.png');
 				return {url: obj['displayUrl'], title: obj['name'], base64: base64str};
-			}).catch(function(err) {
+			}).catch(function(err) {				
 				console.error(err);
+				return {url: obj['displayUrl'], title: obj['name'], base64: 0};
 			});
 		});
 		return Q.all(arr);
