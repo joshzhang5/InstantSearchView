@@ -58,9 +58,10 @@ angular.module('myApp', [
     } else if (keyEvent.which == 13) {
         var host = "http://143.215.90.149:4567/" + $scope.query;
         $http.get(host).then(function(response) {
-          $scope.imageList = response.data;
-          alert("success");
-          console.log($scope.imageList);
+        $scope.imageList = response.data;
+        console.log("success");
+        $scope.results = true;
+        console.log($scope.imageList);
         })
     }
   }

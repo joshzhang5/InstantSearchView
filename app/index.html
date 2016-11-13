@@ -52,11 +52,11 @@
 </div>
 <!-- /.row -->
 
-<div class="large-wrapper-2">
- <div id="carousel-id" class="carousel" style = "width = 900px; height = 1200px;">
-    <a class="carousel-item"><img href = {{imageList[1].url}} src = {{getImage(imageList[carMid].base64)}} style = "width = 900px; height = 900px;"></a>
-    <a class="carousel-item"><img href = {{imageList[2].url}} src = {{getImage(imageList[carRight].base64)}} style = "width = 900px; height = 900px;"></a>
-    <a class="carousel-item"><img href = {{imageList[0].url}} src = {{getImage(imageList[carLeft].base64)}} style = "width = 900px; height = 900px;"></a>
+<div class="large-wrapper-2" ng-show: ="results">
+ <div id="carousel-id" class="carousel"  ng-show: ="results" style = "width = 900px; height = 1200px;">
+    <a class="carousel-item"  ng-show: ="results"><img href = {{imageList[1].url}} src = {{getImage(imageList[carMid].base64)}} style = "width = 900px; height = 900px;"></a>
+    <a class="carousel-item" ng-show: ="results"><img href = {{imageList[2].url}} src = {{getImage(imageList[carRight].base64)}} style = "width = 900px; height = 900px;"></a>
+    <a class="carousel-item" ng-show: ="results"><img href = {{imageList[0].url}} src = {{getImage(imageList[carLeft].base64)}} style = "width = 900px; height = 900px;"></a>
 </div>
 
 </div>
