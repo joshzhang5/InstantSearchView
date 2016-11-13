@@ -1,5 +1,17 @@
 /* app css stylesheet */
 
+html {
+  font-family: 'Roboto', sans-serif !important;
+  background-color: #FFFFFF !important;
+}
+
+body {
+  background-color: #FFFFFF !important;
+}
+
+.large-wrapper {
+  background-color: #FFFFFF !important;
+}
 .menu {
   list-style: none;
   border-bottom: 0.1em solid black;
@@ -22,4 +34,41 @@
 .menu > li + li:before {
   content: "|";
   padding-right: 0.3em;
+}
+
+.nav-wrapper {
+  margin-top: 1em;
+  margin-left: 30em;
+  margin-right: 30em;
+  background-color: #FFFFFF !important;
+}
+
+.input-field {
+  background-color: #694489;
+  font-family: Roboto', sans-serif !important;
+}
+
+nav {
+  background-color: #FFFFFF !important;
+}
+
+.logo {
+  font-family: 'Roboto', sans-serif !important;
+  text-align:center;
+  font-size: 10em;
+  color: #694489;
+}
+
+.logo-wrapper {
+  margin-top: 1em;
+}
+
+.carousel {
+  height:1000px !important;
+}
+
+.carousel-item {
+  width: 600px !important;
+  height: 1200px !important;
+  margin-top: -100px !important;
 }
