@@ -27,7 +27,7 @@
 </head>
 
 
-<body ng-keydown="moveCarousel($event)">
+<body ng-keydown="moveCarousel($event)" ng-style="{'background-image': 'url(' + getImage(test) + ')'}">>
 
 
   <!--[if lt IE 7]>
@@ -52,7 +52,6 @@
           </form>
         </div> <!-- nav-wrapper-->
       </nav>
-
         <!-- /input-group -->
     </div>
     <!-- /.col-lg-6 -->
