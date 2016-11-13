@@ -50,6 +50,8 @@ body {
 
 nav {
   background-color: #FFFFFF !important;
+  box-shadow: none !important;
+  margin-top: -5em ;
 }
 
 .logo {
@@ -60,7 +62,7 @@ nav {
 }
 
 .logo-wrapper {
-  margin-top: 1em;
+  margin-top: -5em;
 }
 
 .carousel {
@@ -70,5 +72,5 @@ nav {
 .carousel-item {
   width: 600px !important;
   height: 1200px !important;
-  margin-top: -100px !important;
+  margin-top: 100px !important;
 }
