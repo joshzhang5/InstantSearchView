@@ -11,7 +11,6 @@ angular.module('myApp', [
   $locationProvider.hashPrefix('!');
   //$routeProvider.otherwise({redirectTo: '/view1'});
 }])
-
 .controller('indexCtrl', ['$scope', '$http', function($scope, $http) {
   $scope.imageList = [];
   $scope.current = 1;
@@ -21,15 +20,8 @@ angular.module('myApp', [
   $scope.carRight = 2;
   $scope.carLeft = 0;
   $scope.move = 0;
-  $scope.query = "cow";
-  var host = "http://143.215.90.149:4567/" + $scope.query;
-  $http.get(host).then(function(response) {
-        $scope.imageList = response.data;
-        $scope.test = response.data[0].base64;
-        alert("success");
-        console.log($scope.imageList);
-  })
-
+  $scope.query = "gt";
+  $scope.results = false;
   $scope.getImage = function(data){
     return 'data:image/png;base64,' + data;
   }
@@ -64,8 +56,12 @@ angular.module('myApp', [
         $scope.next = (($scope.next + 1 % $scope.imageList.length) + $scope.imageList.length) % $scope.imageList.length;
         $scope.prev = (($scope.prev + 1 % $scope.imageList.length) + $scope.imageList.length) % $scope.imageList.length;
     } else if (keyEvent.which == 13) {
-        var win = window.open(imageList[current].url, '_blank');
-        win.focus();
+        var host = "http://143.215.90.149:4567/" + $scope.query;
+        $http.get(host).then(function(response) {
+          $scope.imageList = response.data;
+          alert("success");
+          console.log($scope.imageList);
+        })
     }
   }
 

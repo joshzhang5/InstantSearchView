@@ -38,7 +38,7 @@
       <nav
         <div class="nav-wrapper">
           <form>
-            <div class="input-field">
+            <div class="input-field" ng-keydown="moveCarousel($event)">
               <input id="search" type="search" required ng-model = "query">
               <label for="search"><i class="material-icons">search</i></label>
               <i class="material-icons">close</i>
@@ -54,9 +54,9 @@
 
 <div class="large-wrapper-2">
  <div id="carousel-id" class="carousel" style = "width = 900px; height = 1200px;">
-    <a class="carousel-item"><img href = {{imageList[1].url}} src = {{getImage(imageList[1].base64)}} style = "width = 900px; height = 900px;"></a>
-    <a class="carousel-item"><img href = {{imageList[2].url}} src = {{getImage(imageList[2].base64)}} style = "width = 900px; height = 900px;"></a>
-    <a class="carousel-item"><img href = {{imageList[0].url}} src = {{getImage(imageList[0].base64)}} style = "width = 900px; height = 900px;"></a>
+    <a class="carousel-item"><img href = {{imageList[1].url}} src = {{getImage(imageList[carMid].base64)}} style = "width = 900px; height = 900px;"></a>
+    <a class="carousel-item"><img href = {{imageList[2].url}} src = {{getImage(imageList[carRight].base64)}} style = "width = 900px; height = 900px;"></a>
+    <a class="carousel-item"><img href = {{imageList[0].url}} src = {{getImage(imageList[carLeft].base64)}} style = "width = 900px; height = 900px;"></a>
 </div>
 
 </div>
