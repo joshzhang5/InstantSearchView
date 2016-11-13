@@ -82,7 +82,7 @@ nav {
 }
 
 .carousel-item {
-  width: 600px !important;
-  height: 1200px !important;
+  width: 30% !important;
+  height: 60% !important;
   margin-top: 100px !important;
 }
