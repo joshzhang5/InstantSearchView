@@ -9,9 +9,17 @@ body {
   background-color: #FFFFFF !important;
 }
 
-.large-wrapper {
+.large-wrapper-1 {
   background-color: #FFFFFF !important;
+  z-index: 2;
 }
+
+
+.large-wrapper-2 {
+  background-color: #FFFFFF !important;
+  z-index: 1;
+}
+
 .menu {
   list-style: none;
   border-bottom: 0.1em solid black;
@@ -38,8 +46,8 @@ body {
 
 .nav-wrapper {
   margin-top: 1em;
-  margin-left: 30em;
-  margin-right: 30em;
+  margin-left: 50em;
+  margin-right: 50em;
   background-color: #FFFFFF !important;
 }
 
@@ -52,6 +60,7 @@ nav {
   background-color: #FFFFFF !important;
   box-shadow: none !important;
   margin-top: -5em ;
+  z-index: 100;
 }
 
 .logo {
@@ -67,6 +76,10 @@ nav {
 
 .carousel {
   height:1000px !important;
+}
+
+#carousel-id {
+  z-index: -1;
 }
 
 .carousel-item {
