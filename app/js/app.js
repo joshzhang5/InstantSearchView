@@ -31,7 +31,7 @@ angular.module('myApp', [
     //Math that moves the carousel and sets the current and previous page index's for the HTML bindings
     if (keyEvent.which == 37) {
         $scope.move--;
-        $('.carousel').carousel('prev');
+
         if ($scope.move % 3 == 0) {
             $scope.carLeft = ((($scope.prev - 1) % $scope.imageList.length) + $scope.imageList.length) % $scope.imageList.length;
         } else if ($scope.move % 3 == -1) {
@@ -42,9 +42,10 @@ angular.module('myApp', [
         $scope.current = (($scope.current - 1 % $scope.imageList.length) + $scope.imageList.length) % $scope.imageList.length;
         $scope.next = (($scope.next - 1 % $scope.imageList.length) + $scope.imageList.length) % $scope.imageList.length;
         $scope.prev = (($scope.prev - 1 % $scope.imageList.length) + $scope.imageList.length) % $scope.imageList.length;
+         $('.carousel').carousel('prev');
     } else if (keyEvent.which == 39) {
         $scope.move++;
-        $('.carousel').carousel('next');
+
         if ((($scope.move % 3) + 3) % 3 == 0) {
             $scope.carRight = ((($scope.next + 1) % $scope.imageList.length) + $scope.imageList.length) % $scope.imageList.length;
         } else if ((($scope.move % 3) + 3) % 3 == 1) {
@@ -55,6 +56,7 @@ angular.module('myApp', [
         $scope.current = (($scope.current + 1 % $scope.imageList.length) + $scope.imageList.length) % $scope.imageList.length;
         $scope.next = (($scope.next + 1 % $scope.imageList.length) + $scope.imageList.length) % $scope.imageList.length;
         $scope.prev = (($scope.prev + 1 % $scope.imageList.length) + $scope.imageList.length) % $scope.imageList.length;
+        $('.carousel').carousel('next');
     } else if (keyEvent.which == 13) {
         var host = "http://143.215.90.149:4567/" + $scope.query;
         $http.get(host).then(function(response) {
@@ -65,7 +67,6 @@ angular.module('myApp', [
         })
     }
   }
-
 }]);
 
 
