@@ -15,8 +15,10 @@ app.get('/:query', function (req, res, next) {
   	}).then(function(result) {
   		var body = JSON.parse(result[0]['body']);
   		var arr = body.webPages.value.map(function(obj) {
-  			//return {url: obj['displayUrl'], title: obj['name'], base64: 0};
-			return Q.ninvoke(webshot, obj['displayUrl'], 'google.png')
+  			
+			//return Q.ninvoke(webshot, obj['displayUrl'], 'google.png')
+			//return {url: obj['displayUrl'], title: obj['name'], base64: 0}
+			return Q(urlToImage(obj['displayUrl'], 'google.png'))
   			.then(function(err) {
 				var base64str = base64_encode('google.png');
 				return {url: obj['displayUrl'], title: obj['name'], base64: base64str};
