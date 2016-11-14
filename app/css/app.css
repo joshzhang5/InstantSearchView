@@ -1,5 +1,25 @@
 /* app css stylesheet */
 
+html {
+  font-family: 'Roboto', sans-serif !important;
+  background-color: #FFFFFF !important;
+}
+
+body {
+  background-color: #FFFFFF !important;
+}
+
+.large-wrapper-1 {
+  background-color: #FFFFFF !important;
+  z-index: 2;
+}
+
+
+.large-wrapper-2 {
+  background-color: #FFFFFF !important;
+  z-index: 1;
+}
+
 .menu {
   list-style: none;
   border-bottom: 0.1em solid black;
@@ -22,4 +42,47 @@
 .menu > li + li:before {
   content: "|";
   padding-right: 0.3em;
+}
+
+.nav-wrapper {
+  width: 40%;
+  margin:auto;
+  background-color: #FFFFFF !important;
+}
+
+.input-field {
+  background-color: #694489;
+  font-family: Roboto', sans-serif !important;
+}
+
+nav {
+  background-color: #FFFFFF !important;
+  box-shadow: none !important;
+  margin-top: -5em ;
+  z-index: 100;
+}
+
+.logo {
+  font-family: 'Roboto', sans-serif !important;
+  text-align:center;
+  font-size: 10em;
+  color: #694489;
+}
+
+.logo-wrapper {
+  margin-top: -5em;
+}
+
+.carousel {
+  height:60% !important;
+}
+
+#carousel-id {
+  z-index: -1;
+}
+
+.carousel-item {
+  width: 30% !important;
+  height: 60% !important;
+  margin-top: 100px !important;
 }

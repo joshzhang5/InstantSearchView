@@ -15,6 +15,7 @@
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
   <script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
   <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
   <script src="js/materialize.js"></script>
@@ -26,16 +27,21 @@
 </head>
 
 
-<body ng-keydown="moveCarousel($event)" ng-style="{'background-image': 'url(' + getImage(test) + ')'}">>
+<body ng-keydown="moveCarousel($event)">
 
 
   <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
   <![endif]-->
 
-<div class="row">
+<div class="large-wrapper-1">
     <div class="col-lg-4 col-lg-offset-4">
+
+          <div class="logo-wrapper">
+            <p class="logo"> bingstant! </p>
+          </div>
       <nav>
+
         <div class="nav-wrapper">
           <form>
             <div class="input-field">
@@ -52,9 +58,9 @@
 </div>
 <!-- /.row -->
 
-<div class="row">
+<div class="large-wrapper-2">
 
- <div class="carousel" style = "width = 900px; height = 900px;">
+ <div id="carousel-id" class="carousel" style = "width = 900px; height = 1200px;">
     <a class="carousel-item"><img src = {{getImage(test)}} style = "width = 900px; height = 900px;"></a>
     <a class="carousel-item"><img src = {{getImage(test)}} style = "width = 900px; height = 900px;"></a>
     <a class="carousel-item"><img src = {{getImage(test)}} style = "width = 900px; height = 900px;"></a>
